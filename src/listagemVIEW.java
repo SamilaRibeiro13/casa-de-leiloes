@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
  */
 
 /**
- *
  * @author Adm
  */
 public class listagemVIEW extends javax.swing.JFrame {
