@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+import java.sql.*; // Importa Connection, PreparedStatement e ResultSet
 
+import javax.swing.JOptionPane; 
 /**
  *
  * @author Adm
@@ -37,6 +39,17 @@ public class ProdutosDAO {
     
     
     
-        
+        public void venderProduto(int id) {
+    String sql = "UPDATE produtos SET status = 'Vendido' WHERE id = ?";
+
+    try {
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+    } catch (SQLException e) {
+    }
+}
+
 }
 
